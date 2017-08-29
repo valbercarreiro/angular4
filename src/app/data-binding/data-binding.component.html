@@ -22,7 +22,7 @@
     <img [src]="urlImagem">
   </article>
 </section>
--->
+
 <section class="property-binding">
   <h3>Class and Style CSS</h3>
   <div>
@@ -56,4 +56,72 @@
       Esse texto só deve aparecer em caso de informação
     </div>
   </div>
+</section>
+
+<section>
+  <h3>Event biding</h3>
+  <article>
+    <div>
+      <button (click)="botaoClicado()" class="btn btn-primary">Me clique!</button>
+      <br /><br />
+
+      <input type="text" (keyup)="onkeyup($event)"
+                          (keyup.enter)="salvarValor(campoInput.value)"
+                          (blur) = "salvarValor(campoInput.value)"
+                          #campoInput>
+      <p>
+        Valor Atual: {{ valorAtual }}
+      </p>
+      <p>
+        Valor Salvo: {{ valorSalvo }}
+      </p>
+
+      <br /><br />
+
+      <span (mouseover)="onMouseOverOut()"
+            (mouseout)="onMouseOverOut()"
+            [class.highlight] = "isMouseOver">
+        Passe o Mouse sobre mim
+      </span>
+
+    </div>
+  </article>
+</section>
+-->
+
+<section>
+  <h3>Two-way data biding</h3>
+  <article>
+    <div>
+      <input type="text"
+        [value] = "nome"
+        (input) = "nome = $event.target.value"
+      />
+
+      <br />
+
+      <input type="text"
+        [ngModel] = "nome"
+        (ngModelChange) = "nome = $event"
+      />
+
+      <br />
+
+      <input type="text"
+        [(ngModel)] = "nome"
+      />
+
+      <p>
+        Voce digitou: {{ nome }}
+      </p>
+    </div>
+
+    <div>
+      <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade</p>
+
+      <input type="text" [(ngModel)]="pessoa.nome" />
+
+      <input type="text" [(ngModel)]="pessoa.idade" />
+    </div>
+  </article>
 </section>
