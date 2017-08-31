@@ -87,7 +87,6 @@
     </div>
   </article>
 </section>
--->
 
 <section>
   <h3>Two-way data biding</h3>
@@ -123,5 +122,24 @@
 
       <input type="text" [(ngModel)]="pessoa.idade" />
     </div>
+  </article>
+</section>
+
+<section class="input-output-properties">
+
+  <article>
+    <h3>Input/Output properties</h3>
+
+    <app-curso [nome] = "nomeDoCurso"></app-curso>
+  </article>
+</section>
+-->
+
+<section class="input-output-properties">
+
+  <article>
+    <h3>Input/Output properties</h3>
+
+    <contador valor="10" (mudouValor)="onMudouValor($event)"></contador>
   </article>
 </section>
