@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hello Word!';
+
+  valorInicial: number = 5;
+
+  deletarCiclo: boolean = false;
+
+  mudarValor() {
+    this.valorInicial++;
+  }
+
+  destruirCiclo() {
+    this.deletarCiclo = true;
+  }
 }
